@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap');
+
+:root {
+    --main-bg-color: #0D1117;
+    --header-bg-color: #010409;
+
+    --main-fg-color: #ffffff;
+    --second-fg-color: #30363D;
+
+    --font1: 'Ubuntu', sans-serif;
+}

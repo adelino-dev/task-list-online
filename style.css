@@ -1,16 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap');
-
-:root {
-    --main-bg-color: #0D1117;
-    --header-bg-color: #010409;
-
-    --main-fg-color: #ffffff;
-    --second-fg-color: #30363D;
-
-    --font1: 'Ubuntu', sans-serif;
-}
-
+@import url(variables.css);
 
 html{
     background-color: var(--main-bg-color);
@@ -82,7 +70,9 @@ img#user-image{
 section{
     background-color: var(--main-bg-color);
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 #add-task{
@@ -92,6 +82,7 @@ section{
     box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
 
     height: 48px;
+    width: 200px;
     padding: 2px 24px;
     margin: 15px;
     

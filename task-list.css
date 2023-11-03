@@ -1,0 +1,71 @@
+@import url(variables.css);
+
+#tasks{
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#tasks>li{
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    border: 1.5px var(--second-fg-color) solid;
+    padding: 5px 10px;
+}
+
+.checkbox-task{
+    width: 15px;
+
+}
+.text-task{
+    cursor:text;
+    border-style: none;
+    margin: 10px;
+    width: 30vw;
+    word-wrap: break-word;
+}
+
+.div-buttons{
+
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    gap: 5px;
+}
+
+#tasks li button{
+    width: 30px;
+    height: 30px;
+    
+    background-size:  70% 70%;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    border-radius: 5px;
+    border-style:solid;
+
+}
+
+.archive-task{
+    background-color: var(--main-bg-color);
+    background-image: url('icons/archive-white.ico');
+    border: 1.2px var(--second-fg-color);
+}
+
+.delete-task{
+    background-color: var(--main-bg-color);
+    background-image: url('icons/delete-white.ico');
+    border: 1.2px var(--second-fg-color);
+}
+
+.archive-task:hover{
+    background-color: rgb(55, 55, 224);
+    border-color: rgb(55, 55, 224);;
+}
+.delete-task:hover{
+    background-color: red;
+    border-color: red;
+}

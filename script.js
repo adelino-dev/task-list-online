@@ -20,11 +20,21 @@ class Task{
         this.buttonDelete.classList.add('delete-task');
 
         this.text.textContent = "Escreva aqui...";
+
         this.checkbox.type = "checkbox";
 
-        this.text.addEventListener('click', function(){
+        this.text.addEventListener('click', this._editTask);
+        this.text.addEventListener('keydown', function(){
             this.text = event.target;
-            this.text.contentEditable = true;
+            if (this.text.textContent == "Escreva aqui..."){
+                this.text.textContent = "";
+            }
+        })
+        this.text.addEventListener('blur', function(){
+            this.text = event.target;
+            if (this.text.textContent.replace(/\s/g, "") == ""){
+                this.text.textContent = "Escreva aqui...";
+            }
         })
 
         this.buttonArchive.addEventListener('click', this._Archive);
@@ -44,11 +54,13 @@ class Task{
     }
 
     _editTask(){
-
+        this.text = event.target;
+        this.text.contentEditable = true;
     }
 
     _Archive(){
-        
+        this.line = event.target.parentElement.parentElement;
+        this.line.remove();
     }
 }
 

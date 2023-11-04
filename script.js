@@ -7,15 +7,15 @@ class Task{
     _createTask(){
         this.line = document.createElement('li');
         this.checkbox = document.createElement('input');
-        this.text = document.createElement('div');
+        this.text = document.createElement('label');
         this.buttonsDiv = document.createElement('div')
         this.buttonArchive = document.createElement('button');
         this.buttonDelete = document.createElement('button');
 
         
-        this.checkbox.classList.add("checkbox-task")
+        this.checkbox.classList.add("checkbox-task");
         this.text.classList.add("text-task");
-        this.buttonsDiv.classList.add('div-buttons')
+        this.buttonsDiv.classList.add('div-buttons');
         this.buttonArchive.classList.add('archive-task');
         this.buttonDelete.classList.add('delete-task');
 
@@ -23,6 +23,7 @@ class Task{
 
         this.checkbox.type = "checkbox";
 
+        this.checkbox.addEventListener('click', this._check)
         this.text.addEventListener('click', this._editTask);
         this.text.addEventListener('keydown', function(){
             this.text = event.target;
@@ -32,7 +33,8 @@ class Task{
         })
         this.text.addEventListener('blur', function(){
             this.text = event.target;
-            if (this.text.textContent.replace(/\s/g, "") == ""){
+            var text = this.text.textContent
+            if (text.replace(/\s/g, "") == ""){
                 this.text.textContent = "Escreva aqui...";
             }
         })
@@ -61,6 +63,13 @@ class Task{
     _Archive(){
         this.line = event.target.parentElement.parentElement;
         this.line.remove();
+    }
+
+    _check(){
+        var line = event.target.parentElement;
+        setTimeout(function(){
+            line.remove();
+        }, 200);
     }
 }
 
